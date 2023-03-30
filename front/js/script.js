@@ -27,6 +27,3 @@ fetch (" http://localhost:3000/api/products").then (function (response){
         article.appendChild(p)
     }
 }) 
-
-
-
