@@ -6,6 +6,7 @@ fetch(" http://localhost:3000/api/products")
     return response.json();
   })
   .then(function (data) {
+    console.log(data);
     for (const listProducts of data) {
       let a = document.createElement("a");
       a.setAttribute("href", `./product.html?id=${listProducts._id}`);

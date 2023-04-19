@@ -74,8 +74,17 @@ addBasket.addEventListener("click", function () {
     products.push(productData);
   } else {
     let returnProduct = products[position];
+    if (
+      parseInt(returnProduct.quantite) + parseInt(productData.quantite) >
+      100
+    ) {
+      alert("La quantité ne peu être supérieur à 100");
+      return;
+    }
+
     returnProduct.quantite =
       parseInt(returnProduct.quantite) + parseInt(productData.quantite);
   }
   localStorage.setItem("products", JSON.stringify(products));
+  alert("Le produit a bien été ajouté");
 });
